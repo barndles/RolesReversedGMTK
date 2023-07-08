@@ -9,6 +9,9 @@ var speed: float = 70
 
 func _physics_process(delta):
 	# Add the gravity.
+	
+	handle_collisions()
+	
 	if is_on_wall():
 		direction = -direction
 	
@@ -17,10 +20,7 @@ func _physics_process(delta):
 	else:
 		velocity.y += gravity * delta
 	
-	
 	move_and_slide()
-	
-	handle_collisions()
 
 func handle_collisions():
 	for collision_index in get_slide_collision_count():
@@ -29,4 +29,4 @@ func handle_collisions():
 		if !(collider is CollisionObject2D):
 			return
 		if collider.get_collision_layer_value(1):
-			collider.velocity += velocity + Vector2(0,-200)
+			collider.velocity += Vector2(direction*100,-200)

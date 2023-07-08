@@ -17,5 +17,11 @@ shape = SubResource("RectangleShape2D_l8hvd")
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_6jqv7")
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
-target_position = Vector2(0, 20)
+[node name="Ray_DOWN" type="RayCast2D" parent="."]
+target_position = Vector2(0, 19)
+
+[node name="Ray_RIGHT" type="RayCast2D" parent="."]
+target_position = Vector2(19, 0)
+
+[node name="Ray_LEFT" type="RayCast2D" parent="."]
+target_position = Vector2(-19, 0)

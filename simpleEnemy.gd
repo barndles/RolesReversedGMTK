@@ -18,7 +18,7 @@ func _physics_process(delta):
 	
 	
 	velocity.x = direction * speed
-
+	
 	move_and_slide()
 	
 	handle_collisions()
@@ -29,5 +29,6 @@ func handle_collisions():
 		var collider = collision.get_collider()
 		if !(collider is CollisionObject2D):
 			return
-		if collider.get_collision_layer_value(0):
-			collider.velocity += velocity
+		if collider.get_collision_layer_value(1):
+			collider.velocity += velocity + Vector2(0,-200)
+			print(collider.velocity)

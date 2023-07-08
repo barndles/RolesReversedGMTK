@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://becyunagcmbki" path="res://Assets/Tilemap.tscn" id="1_bk1s2"]
 [ext_resource type="PackedScene" uid="uid://c2cirmtj1ipjd" path="res://player.tscn" id="2_3r1wq"]
-[ext_resource type="PackedScene" path="res://simpleEnemy.tscn" id="3_mf5hw"]
+[ext_resource type="PackedScene" uid="uid://cl32r5awnb1o3" path="res://simpleEnemy.tscn" id="3_mf5hw"]
 
 [node name="Node2D" type="Node2D"]
 

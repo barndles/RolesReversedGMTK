@@ -1,30 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://by7ydp3ic6f4q"]
+[gd_scene load_steps=6 format=3 uid="uid://by7ydp3ic6f4q"]
 
+[ext_resource type="Script" path="res://Mouse_State_Controller.gd" id="1_6ujru"]
 [ext_resource type="Texture2D" uid="uid://h6tgmq7n2byb" path="res://Assets/flipper.png" id="1_y7cvu"]
 [ext_resource type="Texture2D" uid="uid://dri7wcdpk7tuk" path="res://icon.svg" id="2_smig4"]
 [ext_resource type="Script" path="res://ItemList.gd" id="3_k2y0y"]
+[ext_resource type="Script" path="res://Button.gd" id="4_731k0"]
 
 [node name="Control" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6ujru")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_top = 309.0
+offset_right = 512.0
+offset_bottom = 512.0
 
 [node name="ItemList" type="ItemList" parent="."]
-layout_mode = 0
+layout_mode = 2
 offset_left = 7.0
 offset_top = 353.0
 offset_right = 504.0
 offset_bottom = 505.0
-item_count = 12
+allow_reselect = true
+item_count = 4
 max_columns = 0
 same_column_width = true
 icon_mode = 0
 icon_scale = 2.0
 fixed_icon_size = Vector2i(24, 24)
-item_0/text = ""
+item_0/text = "Flipper"
 item_0/icon = ExtResource("1_y7cvu")
 item_1/text = "BasicEnemy"
 item_1/icon = ExtResource("2_smig4")
@@ -32,20 +43,17 @@ item_2/text = "Bumper"
 item_2/icon = ExtResource("2_smig4")
 item_3/text = ""
 item_3/icon = ExtResource("1_y7cvu")
-item_4/text = ""
-item_4/icon = ExtResource("1_y7cvu")
-item_5/text = ""
-item_5/icon = ExtResource("1_y7cvu")
-item_6/text = ""
-item_6/icon = ExtResource("1_y7cvu")
-item_7/text = ""
-item_7/icon = ExtResource("1_y7cvu")
-item_8/text = ""
-item_8/icon = ExtResource("1_y7cvu")
-item_9/text = ""
-item_9/icon = ExtResource("1_y7cvu")
-item_10/text = ""
-item_10/icon = ExtResource("1_y7cvu")
-item_11/text = ""
-item_11/icon = ExtResource("1_y7cvu")
 script = ExtResource("3_k2y0y")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 316.0
+offset_right = 87.0
+offset_bottom = 348.0
+toggle_mode = true
+text = "PAUSED"
+script = ExtResource("4_731k0")
+
+[connection signal="mouse_entered" from="Panel" to="ItemList" method="_on_panel_mouse_entered"]
+[connection signal="mouse_exited" from="Panel" to="ItemList" method="_on_panel_mouse_exited"]

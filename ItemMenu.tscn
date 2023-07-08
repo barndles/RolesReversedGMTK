@@ -18,26 +18,26 @@ script = ExtResource("1_6ujru")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_top = 309.0
+offset_top = 315.0
 offset_right = 512.0
 offset_bottom = 512.0
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 7.0
-offset_top = 316.0
+offset_top = 7.0
 offset_right = 87.0
-offset_bottom = 348.0
+offset_bottom = 39.0
 toggle_mode = true
 text = "PAUSED"
 script = ExtResource("4_731k0")
 
-[node name="ItemList" type="ItemList" parent="."]
+[node name="ItemList" type="ItemList" parent="Panel"]
 layout_mode = 2
 offset_left = 7.0
-offset_top = 353.0
+offset_top = 44.0
 offset_right = 504.0
-offset_bottom = 505.0
+offset_bottom = 196.0
 allow_reselect = true
 item_count = 4
 max_columns = 0
@@ -55,11 +55,5 @@ item_3/text = ""
 item_3/icon = ExtResource("1_y7cvu")
 script = ExtResource("3_k2y0y")
 
-[connection signal="mouse_entered" from="Panel" to="." method="_on_panel_mouse_entered"]
-[connection signal="mouse_entered" from="Panel" to="ItemList" method="_on_panel_mouse_entered"]
-[connection signal="mouse_exited" from="Panel" to="." method="_on_panel_mouse_exited"]
-[connection signal="mouse_exited" from="Panel" to="ItemList" method="_on_panel_mouse_exited"]
-[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
-[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
-[connection signal="mouse_entered" from="ItemList" to="." method="_on_item_list_mouse_entered"]
-[connection signal="mouse_exited" from="ItemList" to="." method="_on_item_list_mouse_exited"]
+[connection signal="mouse_entered" from="Panel" to="Panel/ItemList" method="_on_panel_mouse_entered"]
+[connection signal="mouse_exited" from="Panel" to="Panel/ItemList" method="_on_panel_mouse_exited"]

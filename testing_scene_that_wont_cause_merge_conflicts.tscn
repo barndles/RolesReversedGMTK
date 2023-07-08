@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://lqmaj34500vm"]
+[gd_scene load_steps=6 format=3 uid="uid://lqmaj34500vm"]
 
 [ext_resource type="PackedScene" uid="uid://becyunagcmbki" path="res://Assets/Tilemap.tscn" id="1_1lpjw"]
 [ext_resource type="PackedScene" uid="uid://cl32r5awnb1o3" path="res://simpleEnemy.tscn" id="2_6yqrb"]
 [ext_resource type="PackedScene" uid="uid://c2cirmtj1ipjd" path="res://player.tscn" id="3_vt4m8"]
 [ext_resource type="PackedScene" uid="uid://bjg1txxb7wj4a" path="res://flipper.tscn" id="4_lqkkq"]
+[ext_resource type="PackedScene" uid="uid://b2ynd5vhjec3i" path="res://bouncer.tscn" id="5_gutc5"]
 
 [node name="TestingSceneThatWontCauseMergeConflicts" type="Node2D"]
 
@@ -27,3 +28,6 @@ position = Vector2(273, 120)
 
 [node name="flipper4" parent="." instance=ExtResource("4_lqkkq")]
 position = Vector2(356, 161)
+
+[node name="Bouncer" parent="." instance=ExtResource("5_gutc5")]
+position = Vector2(276, 79)

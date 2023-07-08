@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2ynd5vhjec3i"]
+
+[ext_resource type="Script" path="res://bouncer.gd" id="1_2cuwj"]
+[ext_resource type="Texture2D" uid="uid://dri7wcdpk7tuk" path="res://icon.svg" id="2_w2ept"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oinui"]
+radius = 17.0294
+
+[node name="Bouncer" type="Area2D"]
+collision_layer = 0
+collision_mask = 28
+script = ExtResource("1_2cuwj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_oinui")
+
+[node name="Icon" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_w2ept")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

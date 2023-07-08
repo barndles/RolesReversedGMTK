@@ -1,12 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4kwqbyxowhcj"]
+[gd_scene load_steps=7 format=3 uid="uid://d4kwqbyxowhcj"]
 
 [ext_resource type="PackedScene" uid="uid://becyunagcmbki" path="res://Assets/Tilemap.tscn" id="1_bk1s2"]
 [ext_resource type="PackedScene" uid="uid://c2cirmtj1ipjd" path="res://player.tscn" id="2_3r1wq"]
 [ext_resource type="PackedScene" uid="uid://cl32r5awnb1o3" path="res://simpleEnemy.tscn" id="3_mf5hw"]
-<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://bjg1txxb7wj4a" path="res://flipper.tscn" id="4_bhsak"]
-=======
->>>>>>> 99568a6 (nothing of note)
+[ext_resource type="PackedScene" uid="uid://by7ydp3ic6f4q" path="res://ItemMenu.tscn" id="5_glag1"]
+[ext_resource type="Script" path="res://ItemMenu.gd" id="6_ltij4"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -18,14 +17,14 @@ position = Vector2(36, 53)
 collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(163, 70)
+position = Vector2(256, 256)
 
 [node name="Simple Enemy" parent="." instance=ExtResource("3_mf5hw")]
 position = Vector2(232, 113)
-<<<<<<< HEAD
 
 [node name="flipper" parent="." instance=ExtResource("4_bhsak")]
-position = Vector2(205, 55)
+position = Vector2(241, 89)
 scale = Vector2(-1, 1)
-=======
->>>>>>> 99568a6 (nothing of note)
+
+[node name="Control" parent="." instance=ExtResource("5_glag1")]
+script = ExtResource("6_ltij4")

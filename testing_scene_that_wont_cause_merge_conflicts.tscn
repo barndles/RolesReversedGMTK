@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://becyunagcmbki" path="res://Assets/Tilemap.tscn" id="1_1lpjw"]
 [ext_resource type="PackedScene" uid="uid://cl32r5awnb1o3" path="res://simpleEnemy.tscn" id="2_6yqrb"]
 [ext_resource type="PackedScene" uid="uid://c2cirmtj1ipjd" path="res://player.tscn" id="3_vt4m8"]
-[ext_resource type="PackedScene" uid="uid://bjg1txxb7wj4a" path="res://flipper.tscn" id="4_lqkkq"]
+[ext_resource type="PackedScene" path="res://flipper.tscn" id="4_lqkkq"]
 
 [node name="TestingSceneThatWontCauseMergeConflicts" type="Node2D"]
 

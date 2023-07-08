@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cl32r5awnb1o3" path="res://simpleEnemy.tscn" id="2_6yqrb"]
 [ext_resource type="PackedScene" uid="uid://c2cirmtj1ipjd" path="res://player.tscn" id="3_vt4m8"]
 [ext_resource type="PackedScene" uid="uid://bjg1txxb7wj4a" path="res://flipper.tscn" id="4_lqkkq"]
-[ext_resource type="PackedScene" uid="uid://b2ynd5vhjec3i" path="res://bouncer.tscn" id="5_gutc5"]
+[ext_resource type="PackedScene" path="res://bouncer.tscn" id="5_gutc5"]
 
 [node name="TestingSceneThatWontCauseMergeConflicts" type="Node2D"]
 

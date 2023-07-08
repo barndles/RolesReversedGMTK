@@ -28,6 +28,9 @@ func _physics_process(delta):
 		rayR.enabled = false
 		groundRay = rayL.is_colliding()
 	
+	if velocity.x != 0:
+		direction = sign(velocity.x)
+	
 	if get_wall_normal() == Vector2(-1,0):
 		direction = -1
 	if get_wall_normal() == Vector2(1,0):
@@ -36,7 +39,7 @@ func _physics_process(delta):
 	velocity.x = SPEED * direction
 	
 	if is_on_floor() and not groundRay:
-		velocity.y = JUMP_VELOCITY
+		velocity.y += JUMP_VELOCITY
 
 
 	# Get the input direction and handle the movement/deceleration.

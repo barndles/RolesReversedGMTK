@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://becyunagcmbki" path="res://Assets/Tilemap.tscn" id="1_1lpjw"]
 [ext_resource type="PackedScene" uid="uid://c2cirmtj1ipjd" path="res://player.tscn" id="3_vt4m8"]
 [ext_resource type="PackedScene" uid="uid://bjg1txxb7wj4a" path="res://flipper.tscn" id="4_lqkkq"]
-[ext_resource type="PackedScene" uid="uid://b2ynd5vhjec3i" path="res://bouncer.tscn" id="5_gutc5"]
+[ext_resource type="PackedScene" path="res://bouncer.tscn" id="5_gutc5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3nceh"]
 size = Vector2(88, 58)

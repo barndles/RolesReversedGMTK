@@ -32,4 +32,4 @@ func launch_entities():
 		if body == self:
 			continue
 		body.velocity = Vector2(-100 * transform.get_scale().y,-500)
-		print(transform.get_scale().y)
+		#print(transform.get_scale().y)

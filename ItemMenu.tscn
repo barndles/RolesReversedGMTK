@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://by7ydp3ic6f4q"]
+[gd_scene load_steps=4 format=3 uid="uid://by7ydp3ic6f4q"]
 
 [ext_resource type="Texture2D" uid="uid://h6tgmq7n2byb" path="res://Assets/flipper.png" id="1_y7cvu"]
+[ext_resource type="Texture2D" uid="uid://dri7wcdpk7tuk" path="res://icon.svg" id="2_smig4"]
+[ext_resource type="Script" path="res://ItemList.gd" id="3_k2y0y"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -18,13 +20,16 @@ offset_right = 504.0
 offset_bottom = 505.0
 item_count = 12
 max_columns = 0
-icon_scale = 4.0
+same_column_width = true
+icon_mode = 0
+icon_scale = 2.0
+fixed_icon_size = Vector2i(24, 24)
 item_0/text = ""
 item_0/icon = ExtResource("1_y7cvu")
-item_1/text = ""
-item_1/icon = ExtResource("1_y7cvu")
-item_2/text = ""
-item_2/icon = ExtResource("1_y7cvu")
+item_1/text = "BasicEnemy"
+item_1/icon = ExtResource("2_smig4")
+item_2/text = "Bumper"
+item_2/icon = ExtResource("2_smig4")
 item_3/text = ""
 item_3/icon = ExtResource("1_y7cvu")
 item_4/text = ""
@@ -43,3 +48,4 @@ item_10/text = ""
 item_10/icon = ExtResource("1_y7cvu")
 item_11/text = ""
 item_11/icon = ExtResource("1_y7cvu")
+script = ExtResource("3_k2y0y")

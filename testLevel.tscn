@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4kwqbyxowhcj"]
+[gd_scene load_steps=5 format=3 uid="uid://d4kwqbyxowhcj"]
 
 [ext_resource type="PackedScene" uid="uid://becyunagcmbki" path="res://Assets/Tilemap.tscn" id="1_bk1s2"]
 [ext_resource type="PackedScene" uid="uid://c2cirmtj1ipjd" path="res://player.tscn" id="2_3r1wq"]
 [ext_resource type="PackedScene" uid="uid://cl32r5awnb1o3" path="res://simpleEnemy.tscn" id="3_mf5hw"]
+[ext_resource type="PackedScene" path="res://flipper.tscn" id="4_bhsak"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -18,3 +19,6 @@ position = Vector2(163, 70)
 
 [node name="Simple Enemy" parent="." instance=ExtResource("3_mf5hw")]
 position = Vector2(232, 113)
+
+[node name="flipper" parent="." instance=ExtResource("4_bhsak")]
+position = Vector2(179, 55)

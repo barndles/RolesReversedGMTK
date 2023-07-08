@@ -16,6 +16,18 @@ func _physics_process(delta):
 	if is_on_wall():
 		direction = -direction
 	
+	
 	velocity.x = direction * speed
 
 	move_and_slide()
+	
+	handle_collisions()
+
+func handle_collisions():
+	for collision_index in get_slide_collision_count():
+		var collision: KinematicCollision2D = get_slide_collision(collision_index)
+		var collider = collision.get_collider()
+		if !(collider is CollisionObject2D):
+			return
+		if collider.get_collision_layer_value(0):
+			collider.velocity += velocity

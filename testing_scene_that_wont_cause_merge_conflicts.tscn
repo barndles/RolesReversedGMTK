@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://lqmaj34500vm"]
+[gd_scene load_steps=4 format=3 uid="uid://lqmaj34500vm"]
 
 [ext_resource type="PackedScene" uid="uid://becyunagcmbki" path="res://Assets/Tilemap.tscn" id="1_1lpjw"]
 [ext_resource type="PackedScene" uid="uid://cl32r5awnb1o3" path="res://simpleEnemy.tscn" id="2_6yqrb"]
+[ext_resource type="PackedScene" uid="uid://c2cirmtj1ipjd" path="res://player.tscn" id="3_vt4m8"]
 
 [node name="TestingSceneThatWontCauseMergeConflicts" type="Node2D"]
 
@@ -10,3 +11,6 @@ layer_0/tile_data = PackedInt32Array(393216, 1, 0, 458752, 1, 0, 524288, 1, 0, 5
 
 [node name="Simple Enemy" parent="." instance=ExtResource("2_6yqrb")]
 position = Vector2(62, 38)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_vt4m8")]
+position = Vector2(95, 7)

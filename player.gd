@@ -35,8 +35,9 @@ func _physics_process(delta):
 		direction = -1
 	if get_wall_normal() == Vector2(1,0):
 		direction = 1
-		
-	velocity.x = SPEED * direction
+	
+	if is_on_floor():
+		velocity.x = SPEED * direction
 	
 	if is_on_floor() and not groundRay:
 		velocity.y += JUMP_VELOCITY

@@ -4,6 +4,8 @@ extends CharacterBody2D
 # They bounce whatevers in front of them in an arc going behind them (direction can be changed when placing)
 # They can be bounced/moved from behind
 
+# perhaps the fellow should ALWAYS face player. This would add some difficulty in preventing player from going in current direction
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
@@ -29,4 +31,5 @@ func launch_entities():
 			continue
 		if body == self:
 			continue
-		body.velocity = Vector2(-100,-500)
+		body.velocity = Vector2(-100 * transform.get_scale().y,-500)
+		print(transform.get_scale().y)

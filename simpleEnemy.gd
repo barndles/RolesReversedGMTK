@@ -9,15 +9,14 @@ var speed: float = 70
 
 func _physics_process(delta):
 	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
-
-	
 	if is_on_wall():
 		direction = -direction
 	
+	if is_on_floor():
+		velocity.x = direction * speed
+	else:
+		velocity.y += gravity * delta
 	
-	velocity.x = direction * speed
 	
 	move_and_slide()
 	
@@ -31,4 +30,3 @@ func handle_collisions():
 			return
 		if collider.get_collision_layer_value(1):
 			collider.velocity += velocity + Vector2(0,-200)
-			print(collider.velocity)

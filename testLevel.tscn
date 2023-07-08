@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://d4kwqbyxowhcj"]
+[gd_scene load_steps=6 format=3 uid="uid://d4kwqbyxowhcj"]
 
 [ext_resource type="PackedScene" uid="uid://becyunagcmbki" path="res://Assets/Tilemap.tscn" id="1_bk1s2"]
 [ext_resource type="PackedScene" uid="uid://c2cirmtj1ipjd" path="res://player.tscn" id="2_3r1wq"]
 [ext_resource type="PackedScene" uid="uid://cl32r5awnb1o3" path="res://simpleEnemy.tscn" id="3_mf5hw"]
 [ext_resource type="PackedScene" uid="uid://bjg1txxb7wj4a" path="res://flipper.tscn" id="4_bhsak"]
 [ext_resource type="PackedScene" uid="uid://by7ydp3ic6f4q" path="res://ItemMenu.tscn" id="5_glag1"]
-[ext_resource type="Script" path="res://ItemMenu.gd" id="6_ltij4"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -27,4 +26,3 @@ position = Vector2(241, 89)
 scale = Vector2(-1, 1)
 
 [node name="Control" parent="." instance=ExtResource("5_glag1")]
-script = ExtResource("6_ltij4")

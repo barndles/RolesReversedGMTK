@@ -42,9 +42,10 @@ func handle_collisions():
 		if !(collider is CollisionObject2D):
 			continue
 		collider.velocity += Vector2(direction*100,-200)
-		if collider.get_collision_layer_value(4):
-			Global.score += 100
-		durability -= 1
-		if durability == 0:
-			queue_free()
+		
+#		if collider.get_collision_layer_value(4):
+#			Global.score += 100
+#		durability -= 1
+#		if durability == 0:
+#			queue_free()
 		bounce_timeout.start()

@@ -13,13 +13,20 @@ var vel = 0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-func _ready():
-	velocity.x = 100
-	
 
 func _process(delta):
-	if velocity.x != 0:
-		spr.play("walk")
+	if is_on_floor():
+		if abs(velocity.x) > 0.5:
+			spr.play("walk")
+		else:
+			spr.stop() #REPLACE WITH play("idle") IF IT EVER GETS ADDED
+	else:
+		spr.play("hit_air")
+	# sprite flippong
+	if velocity.x > 0:
+		spr.flip_h = true
+	else:
+		spr.flip_h = false
 
 
 
@@ -28,35 +35,29 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	if velocity.x > 0:
-		rayL.enabled = false
-		rayR.enabled = true
-		groundRay = rayR.is_colliding()
-	else:
-		rayL.enabled = true
-		rayR.enabled = false
-		groundRay = rayL.is_colliding()
+#	if velocity.x > 0:
+#		rayL.enabled = false
+#		rayR.enabled = true
+#		groundRay = rayR.is_colliding()
+#	else:
+#		rayL.enabled = true
+#		rayR.enabled = false
+#		groundRay = rayL.is_colliding()
+#
+#	if velocity.x != 0:
+#		direction = sign(velocity.x)
 	
-	if velocity.x != 0:
-		direction = sign(velocity.x)
-	
-	if get_wall_normal() == Vector2(-1,0):
-		direction = -1
-	if get_wall_normal() == Vector2(1,0):
-		direction = 1
+#	if get_wall_normal() == Vector2(-1,0):
+#		direction = -1
+#	if get_wall_normal() == Vector2(1,0):
+#		direction = 1
 	
 	if is_on_floor():
-		velocity.x += SPEED * direction
+#		velocity.x += SPEED * direction
 		velocity.x *= .9
 	
-	if is_on_floor() and not groundRay:
-		velocity.y += JUMP_VELOCITY
-	
-	# sprite flippong
-	if velocity.x > 0:
-		spr.flip_h = true
-	else:
-		spr.flip_h = false
+#	if is_on_floor() and not groundRay:
+#		velocity.y += JUMP_VELOCITY
 
 
 	# Get the input direction and handle the movement/deceleration.

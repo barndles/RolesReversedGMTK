@@ -6,7 +6,7 @@ const bumper = preload("res://bouncer.tscn")
 const boxSpring = preload("res://Assets/BoxSpring/box_spring.tscn")
 
 var spawnables = [flipper, simpleEnemy, bumper, boxSpring]
-var cost = [150,150,200,200]
+var cost = [250,50,200,200]
 var mouseOnUI = get_node(".").mouseOnUI
 var canSpawn = false
 var mousePos
@@ -42,8 +42,10 @@ func _input(event):
 		pass
 
 func spawn(selection:int):
+	if Global.level_over:
+		return
 	if canSpawn and get_tree().paused:
-		Global.score -= cost[selection]
+		Global.score += cost[selection]
 		var spawnedObject = spawnables[selection].instantiate()
 		spawnedObject.global_position = get_global_mouse_position()
 		spawnedObject.scale.x *= flip

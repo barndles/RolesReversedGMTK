@@ -37,14 +37,14 @@ func launch_entities():
 			continue
 		if body == self:
 			continue
-		if flip_timeout.time_left > 0:
-			continue
+#		if flip_timeout.time_left > 0:
+#			continue
 		body.velocity = Vector2(-100 * transform.get_scale().y,-500)
 		spr.play("flippity")
-		durability -= 1
-		if body.get_collision_layer_value(4):
-			Global.score += 100
-		if durability == 0:
-			queue_free()
-		flip_timeout.start()
+#		durability -= 1
+#		if body.get_collision_layer_value(4):
+#			Global.score += 100
+#		if durability == 0:
+#			queue_free()
+#		flip_timeout.start()
 		#print(transform.get_scale().y)

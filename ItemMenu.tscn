@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://by7ydp3ic6f4q"]
+[gd_scene load_steps=10 format=3 uid="uid://by7ydp3ic6f4q"]
 
+[ext_resource type="Script" path="res://LevelControl.gd" id="1_5i4wl"]
 [ext_resource type="Script" path="res://Button_Reset.gd" id="1_tp1b1"]
 [ext_resource type="Texture2D" uid="uid://bktm5a1mwg83t" path="res://Assets/flipper/flipper_icon.png" id="2_gihjo"]
 [ext_resource type="Script" path="res://ItemList.gd" id="3_k2y0y"]
@@ -17,6 +18,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5i4wl")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -74,5 +76,15 @@ offset_right = 402.0
 offset_bottom = 33.0
 script = ExtResource("7_l2dsc")
 
+[node name="Button" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 178.0
+offset_top = 138.0
+offset_right = 186.0
+offset_bottom = 146.0
+text = "NEDXST LEVEL BUTTON"
+
 [connection signal="button_down" from="Panel/RESTART" to="Panel/RESTART" method="_on_button_down"]
 [connection signal="button_down" from="Panel/PAUSE" to="Panel/PAUSE" method="_on_button_down"]
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

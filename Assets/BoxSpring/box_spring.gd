@@ -55,11 +55,11 @@ func launch_entities():
 		if !(obj is CollisionObject2D):
 			continue
 		ray.get_collider().velocity += (ray.get_collision_point()-ray.global_position).normalized()*200
-		if obj.get_collision_layer_value(4):
-			Global.score += 100
-		durability -= 1
-		if durability == 0:
-			queue_free()
+#		if obj.get_collision_layer_value(4):
+#			Global.score += 100
+#		durability -= 1
+#		if durability == 0:
+#			queue_free()
 		bounce_timeout.start()
 
 func _on_animated_sprite_2d_animation_finished():

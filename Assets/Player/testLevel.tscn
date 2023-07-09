@@ -1,15 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://0wuyguili1i3"]
+[gd_scene load_steps=7 format=3 uid="uid://0wuyguili1i3"]
 
 [ext_resource type="PackedScene" uid="uid://becyunagcmbki" path="res://Assets/Tilemap.tscn" id="1_1bttu"]
 [ext_resource type="PackedScene" uid="uid://c2cirmtj1ipjd" path="res://player.tscn" id="2_rk3tu"]
 [ext_resource type="PackedScene" uid="uid://by7ydp3ic6f4q" path="res://ItemMenu.tscn" id="3_t4761"]
-[ext_resource type="Texture2D" uid="uid://b2konejgc235x" path="res://Assets/bg.png" id="4_6yk5y"]
+[ext_resource type="PackedScene" uid="uid://b87xmt6amntqi" path="res://goal.tscn" id="4_345qb"]
+[ext_resource type="PackedScene" uid="uid://lqmaj34500vm" path="res://testing_scene_that_wont_cause_merge_conflicts.tscn" id="4_ojfjw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yc378"]
+size = Vector2(66, 192)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(256, 256)
-texture = ExtResource("4_6yk5y")
 region_rect = Rect2(512, 512, 512, 512)
 
 [node name="TileMap" parent="." instance=ExtResource("1_1bttu")]
@@ -23,3 +26,10 @@ collision_mask = 3
 position = Vector2(256, 256)
 
 [node name="Control" parent="." instance=ExtResource("3_t4761")]
+next_level = ExtResource("4_ojfjw")
+
+[node name="Goal" parent="." instance=ExtResource("4_345qb")]
+position = Vector2(496, 212)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal"]
+shape = SubResource("RectangleShape2D_yc378")

@@ -5,7 +5,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var direction: int = 1
 
-var speed: float = 70
+var speed: float = 10
 @onready var spr = $Icon
 func _physics_process(delta):
 	# Add the gravity.
@@ -25,7 +25,8 @@ func _physics_process(delta):
 		direction = sign(velocity.x)
 	
 	if is_on_floor():
-		velocity.x = direction * speed
+		velocity.x += direction * speed
+		velocity.x *= .9
 	else:
 		velocity.y += gravity * delta
 	

@@ -12,6 +12,10 @@ const JUMP_VELOCITY = -400.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+var durability = 3 
+
+@onready var flip_timeout = $FlipTimeout
+
 @onready var area_2d = $Area2D
 
 func _physics_process(delta):
@@ -31,6 +35,12 @@ func launch_entities():
 			continue
 		if body == self:
 			continue
+		if flip_timeout.time_left > 0:
+			continue
 		body.velocity = Vector2(-100 * transform.get_scale().y,-500)
 		spr.play("flippity")
+		durability -= 1
+		if durability == 0:
+			queue_free()
+		flip_timeout.start()
 		#print(transform.get_scale().y)

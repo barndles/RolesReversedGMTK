@@ -2,6 +2,10 @@ extends Area2D
 
 @onready var spr = $AnimatedSprite2D
 
+var durability = 4
+
+@onready var bounce_timeout = $BounceTimeout
+
 func _ready():
 	spr.play("spin")
 
@@ -15,8 +19,11 @@ func _on_body_entered(body):
 	bounce((body.global_position-global_position).normalized() * 270, body)
 
 func bounce(dir:Vector2, target):
-	var timer = 10
-	if timer > 0:
-		for n in range(timer):
-			target.velocity = dir
-			timer -= 1
+	if bounce_timeout.time_left > 0:
+		return
+	
+	target.velocity = dir
+	durability -= 1
+	if durability == 0:
+		queue_free()
+	bounce_timeout.start()

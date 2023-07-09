@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var spr = get_node("AnimatedSprite2D")
 
 var groundRay
-const SPEED = 100.0
+const SPEED = 10.0
 var direction = 1
 const JUMP_VELOCITY = -300.0
 var vel = 0
@@ -14,7 +14,7 @@ var vel = 0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
-	velocity.x = 200
+	velocity.x = 100
 	
 
 func _process(delta):
@@ -46,7 +46,8 @@ func _physics_process(delta):
 		direction = 1
 	
 	if is_on_floor():
-		velocity.x = SPEED * direction
+		velocity.x += SPEED * direction
+		velocity.x *= .9
 	
 	if is_on_floor() and not groundRay:
 		velocity.y += JUMP_VELOCITY

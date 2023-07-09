@@ -49,6 +49,6 @@ func spawn(selection:int):
 		var spawnedObject = spawnables[selection].instantiate()
 		spawnedObject.global_position = get_global_mouse_position()
 		spawnedObject.scale.x *= flip
-		get_tree().root.get_child(1).add_child(spawnedObject)
+		get_tree().root.get_child(2).add_child(spawnedObject)
 
 

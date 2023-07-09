@@ -16,9 +16,9 @@ grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_top = 315.0
+offset_top = 359.0
 offset_right = 512.0
-offset_bottom = 512.0
+offset_bottom = 511.0
 
 [node name="Button" type="Button" parent="Panel"]
 layout_mode = 0
@@ -36,7 +36,7 @@ layout_mode = 2
 offset_left = 7.0
 offset_top = 44.0
 offset_right = 504.0
-offset_bottom = 196.0
+offset_bottom = 138.0
 allow_reselect = true
 item_count = 4
 max_columns = 0

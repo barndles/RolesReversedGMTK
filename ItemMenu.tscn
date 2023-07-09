@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://by7ydp3ic6f4q"]
+[gd_scene load_steps=7 format=3 uid="uid://by7ydp3ic6f4q"]
 
-[ext_resource type="Texture2D" uid="uid://h6tgmq7n2byb" path="res://Assets/flipper.png" id="1_y7cvu"]
-[ext_resource type="Texture2D" uid="uid://dri7wcdpk7tuk" path="res://icon.svg" id="2_smig4"]
+[ext_resource type="Texture2D" uid="uid://bktm5a1mwg83t" path="res://Assets/flipper/flipper_icon.png" id="2_gihjo"]
 [ext_resource type="Script" path="res://ItemList.gd" id="3_k2y0y"]
+[ext_resource type="Texture2D" uid="uid://bsre3o4oi4c0q" path="res://Assets/Bort-tholomeu_Icon.png" id="3_oikbf"]
+[ext_resource type="Texture2D" uid="uid://dyyc63vs22jxc" path="res://Assets/Gears/Gear_Icon.png" id="4_4q37n"]
 [ext_resource type="Script" path="res://Button.gd" id="4_731k0"]
+[ext_resource type="Texture2D" uid="uid://ilwiw682pcgc" path="res://Assets/BoxSpring/BoxSpring_Icon.png" id="5_l2vnw"]
 
 [node name="Control" type="Control"]
 process_mode = 3
@@ -44,12 +46,12 @@ same_column_width = true
 icon_mode = 0
 icon_scale = 2.0
 fixed_icon_size = Vector2i(24, 24)
-item_0/text = "Flipper"
-item_0/icon = ExtResource("1_y7cvu")
-item_1/text = "BasicEnemy"
-item_1/icon = ExtResource("2_smig4")
-item_2/text = "Bumper"
-item_2/icon = ExtResource("2_smig4")
+item_0/text = ""
+item_0/icon = ExtResource("2_gihjo")
+item_1/text = ""
+item_1/icon = ExtResource("3_oikbf")
+item_2/text = ""
+item_2/icon = ExtResource("4_4q37n")
 item_3/text = ""
-item_3/icon = ExtResource("1_y7cvu")
+item_3/icon = ExtResource("5_l2vnw")
 script = ExtResource("3_k2y0y")

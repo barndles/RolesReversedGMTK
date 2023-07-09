@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dggbusmc3rg7v" path="res://Assets/bg.png" id="1_cq13i"]
 [ext_resource type="PackedScene" uid="uid://c2cirmtj1ipjd" path="res://player.tscn" id="2_rk3tu"]
 [ext_resource type="PackedScene" uid="uid://by7ydp3ic6f4q" path="res://ItemMenu.tscn" id="3_t4761"]
-[ext_resource type="PackedScene" uid="uid://b87xmt6amntqi" path="res://goal.tscn" id="4_345qb"]
-[ext_resource type="PackedScene" uid="uid://dcty6ve5jyvoq" path="res://Assets/LEVELS/LV_1.tscn" id="5_ws1x3"]
+[ext_resource type="PackedScene" path="res://goal.tscn" id="4_345qb"]
+[ext_resource type="PackedScene" uid="uid://dy1nrarqyqylc" path="res://Assets/LEVELS/ENDSCREEN.tscn" id="5_lddg7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yc378"]
 size = Vector2(66, 192)
@@ -28,7 +28,7 @@ collision_mask = 3
 position = Vector2(256, 256)
 
 [node name="Control" parent="." instance=ExtResource("3_t4761")]
-next_level = ExtResource("5_ws1x3")
+next_level = ExtResource("5_lddg7")
 
 [node name="Goal" parent="." instance=ExtResource("4_345qb")]
 position = Vector2(496, 212)

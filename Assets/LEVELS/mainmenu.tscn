@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://b7bgqvorhmewq"]
 
-[ext_resource type="Texture2D" uid="uid://dggbusmc3rg7v" path="res://Assets/bg.png" id="1_8smjm"]
 [ext_resource type="Script" path="res://Assets/LEVELS/mainmenu.gd" id="1_ex7hh"]
 [ext_resource type="PackedScene" uid="uid://dcty6ve5jyvoq" path="res://Assets/LEVELS/LV_1.tscn" id="2_5j2eu"]
+[ext_resource type="Texture2D" uid="uid://bt7gm3udy02em" path="res://Assets/title.png" id="3_brl4u"]
 
 [sub_resource type="Theme" id="Theme_4ly7e"]
 
@@ -14,7 +14,7 @@ first_level = ExtResource("2_5j2eu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(256, 256)
-texture = ExtResource("1_8smjm")
+texture = ExtResource("3_brl4u")
 region_rect = Rect2(0, 0, 512, 512)
 
 [node name="START" type="Button" parent="."]

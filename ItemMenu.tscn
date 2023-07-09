@@ -39,6 +39,7 @@ offset_left = 92.0
 offset_top = 7.0
 offset_right = 172.0
 offset_bottom = 39.0
+focus_mode = 0
 text = "PAUSED"
 script = ExtResource("4_731k0")
 

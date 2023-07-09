@@ -18,6 +18,8 @@ var durability = 3
 
 @onready var area_2d = $Area2D
 
+
+
 func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta

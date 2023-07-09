@@ -4,9 +4,10 @@ extends CharacterBody2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 @onready var direction: int = scale.x
-
+var durability = 3
 var speed: float = 10
 @onready var spr = $Icon
+@onready var bounce_timeout = $BounceTimeout
 func _physics_process(delta):
 	# Add the gravity.
 	
@@ -34,9 +35,16 @@ func _physics_process(delta):
 
 func handle_collisions():
 	for collision_index in get_slide_collision_count():
+		if bounce_timeout.time_left > 0:
+			continue
 		var collision: KinematicCollision2D = get_slide_collision(collision_index)
 		var collider = collision.get_collider()
 		if !(collider is CollisionObject2D):
-			return
-		if collider.get_collision_layer_value(1):
-			collider.velocity += Vector2(direction*100,-200)
+			continue
+		collider.velocity += Vector2(direction*100,-200)
+		if collider.get_collision_layer_value(4):
+			Global.score += 100
+		durability -= 1
+		if durability == 0:
+			queue_free()
+		bounce_timeout.start()

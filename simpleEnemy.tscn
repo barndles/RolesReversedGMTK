@@ -49,7 +49,7 @@ animations = [{
 
 [node name="Simple Enemy" type="CharacterBody2D"]
 collision_layer = 16
-collision_mask = 11
+collision_mask = 31
 script = ExtResource("1_hswdq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -60,3 +60,7 @@ shape = SubResource("RectangleShape2D_n0y0b")
 sprite_frames = SubResource("SpriteFrames_daf5c")
 animation = &"walk"
 frame_progress = 0.0734008
+
+[node name="BounceTimeout" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true

@@ -4,9 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dri7wcdpk7tuk" path="res://icon.svg" id="2_w2ept"]
 [ext_resource type="Texture2D" uid="uid://bya1pm24g1g5l" path="res://Assets/Gears/Gear_maybes.png" id="3_vmhsm"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_oinui"]
-radius = 9.05539
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_qafsu"]
 atlas = ExtResource("3_vmhsm")
 region = Rect2(0, 64, 16, 16)
@@ -43,13 +40,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_tvtc5"]
+
 [node name="Bouncer" type="Area2D"]
 collision_layer = 0
 collision_mask = 28
 script = ExtResource("1_2cuwj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_oinui")
 
 [node name="Icon" type="Sprite2D" parent="."]
 visible = false
@@ -59,5 +55,12 @@ texture = ExtResource("2_w2ept")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_asdm7")
 animation = &"spin"
+
+[node name="BounceTimeout" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tvtc5")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

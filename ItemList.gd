@@ -42,6 +42,6 @@ func spawn(selection:int):
 		Global.score -= cost[selection]
 		var spawnedObject = spawnables[selection].instantiate()
 		spawnedObject.global_position = get_global_mouse_position()
-		get_tree().root.get_child(0).add_child(spawnedObject)
+		get_tree().root.get_child(1).add_child(spawnedObject)
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://by7ydp3ic6f4q"]
+[gd_scene load_steps=9 format=3 uid="uid://by7ydp3ic6f4q"]
 
 [ext_resource type="Script" path="res://Button_Reset.gd" id="1_tp1b1"]
 [ext_resource type="Texture2D" uid="uid://bktm5a1mwg83t" path="res://Assets/flipper/flipper_icon.png" id="2_gihjo"]
@@ -30,7 +30,6 @@ offset_left = 7.0
 offset_top = 7.0
 offset_right = 87.0
 offset_bottom = 39.0
-toggle_mode = true
 text = "RESTART"
 script = ExtResource("1_tp1b1")
 
@@ -40,7 +39,6 @@ offset_left = 92.0
 offset_top = 7.0
 offset_right = 172.0
 offset_bottom = 39.0
-toggle_mode = true
 text = "PAUSED"
 script = ExtResource("4_731k0")
 
@@ -74,3 +72,6 @@ offset_top = 10.0
 offset_right = 402.0
 offset_bottom = 33.0
 script = ExtResource("7_l2dsc")
+
+[connection signal="button_down" from="Panel/RESTART" to="Panel/RESTART" method="_on_button_down"]
+[connection signal="button_down" from="Panel/PAUSE" to="Panel/PAUSE" method="_on_button_down"]

@@ -1,14 +1,18 @@
 extends Button
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if button_pressed:
-		if self.text == "RESTART":
-			Global.score = 0
-			get_tree().reload_current_scene()
-		get_tree().paused = true
-		self.text = "PLAY"
-	else:
-		get_tree().paused = false
+func _ready():
+	get_tree().paused = true
+
+func _process(_delta):
+	if Input.is_action_just_pressed("Pause"):
+		pause()
+
+func _on_button_down():
+	pause()
+
+func pause():
+	get_tree().paused = !get_tree().paused
+	if get_tree().paused:
 		self.text = "PAUSED"
-	pass
+	else:
+		self.text = "PLAYING"

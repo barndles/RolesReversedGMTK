@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7bgqvorhmewq"]
+
+[ext_resource type="Texture2D" uid="uid://dggbusmc3rg7v" path="res://Assets/bg.png" id="1_8smjm"]
+[ext_resource type="Script" path="res://Assets/LEVELS/mainmenu.gd" id="1_ex7hh"]
+[ext_resource type="PackedScene" uid="uid://dcty6ve5jyvoq" path="res://Assets/LEVELS/LV_1.tscn" id="2_5j2eu"]
+
+[sub_resource type="Theme" id="Theme_4ly7e"]
+
+[node name="MAINMENU" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ex7hh")
+first_level = ExtResource("2_5j2eu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(256, 256)
+texture = ExtResource("1_8smjm")
+region_rect = Rect2(0, 0, 512, 512)
+
+[node name="START" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 192.0
+offset_top = 325.0
+offset_right = 320.0
+offset_bottom = 366.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4ly7e")
+text = "START"
+
+[node name="QUIT" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 192.0
+offset_top = 376.0
+offset_right = 320.0
+offset_bottom = 417.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "QUIT"
+
+[connection signal="pressed" from="START" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="QUIT" to="." method="_on_quit_pressed"]

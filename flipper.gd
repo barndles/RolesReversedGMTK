@@ -40,7 +40,8 @@ func launch_entities():
 		body.velocity = Vector2(-100 * transform.get_scale().y,-500)
 		spr.play("flippity")
 		durability -= 1
-		Global.score += 100
+		if body.get_collision_layer_value(4):
+			Global.score += 100
 		if durability == 0:
 			queue_free()
 		flip_timeout.start()

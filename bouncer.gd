@@ -24,7 +24,8 @@ func bounce(dir:Vector2, target):
 	
 	target.velocity = Vector2(dir.x,dir.y*.5-200)
 	durability -= 1
-	Global.score += 100
+	if target.get_collision_layer_value(4):
+		Global.score += 100
 	if durability == 0:
 		queue_free()
 	bounce_timeout.start()

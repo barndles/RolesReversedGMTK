@@ -70,7 +70,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rc3ly")
 }],
-"loop": true,
+"loop": false,
 "name": &"Launch_L",
 "speed": 5.0
 }, {
@@ -84,12 +84,12 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lgi3r")
 }],
-"loop": true,
+"loop": false,
 "name": &"Launch_R",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 0.1,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_v7ngc")
 }, {
 "duration": 1.0,
@@ -97,11 +97,8 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ji3hw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v7ngc")
 }],
-"loop": true,
+"loop": false,
 "name": &"Launch_U",
 "speed": 5.0
 }, {
@@ -125,6 +122,7 @@ animations = [{
 
 [node name="BoxSpring" type="CharacterBody2D"]
 position = Vector2(0, -16)
+collision_mask = 31
 script = ExtResource("1_q2na0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -133,24 +131,25 @@ shape = SubResource("RectangleShape2D_hmtyi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hg21c")
-animation = &"Launch_U"
-frame_progress = 0.129734
+animation = &"idle"
 
 [node name="Triggers" type="Node2D" parent="."]
 
 [node name="CollisionR" type="RayCast2D" parent="Triggers"]
-position = Vector2(6, 8)
+position = Vector2(7, 8)
 rotation = 1.5708
-target_position = Vector2(-2.19345e-05, -6)
-collision_mask = 15
+target_position = Vector2(0, -10)
+collision_mask = 28
 
 [node name="CollisionU" type="RayCast2D" parent="Triggers"]
-position = Vector2(0, 2.25)
-target_position = Vector2(0, -6.25)
-collision_mask = 15
+position = Vector2(0, 2)
+target_position = Vector2(0, -10)
+collision_mask = 28
 
 [node name="CollisionL" type="RayCast2D" parent="Triggers"]
-position = Vector2(-6, 8)
+position = Vector2(-7, 8)
 rotation = -1.5708
-target_position = Vector2(2.19345e-05, -6)
-collision_mask = 15
+target_position = Vector2(0, -10)
+collision_mask = 28
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

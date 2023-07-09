@@ -41,9 +41,22 @@ func _physics_process(delta):
 		spr.play("Launch_U")
 		print("ray_U")
 	else:
-		spr.play("idle")
+	
+		pass#spr.play("idle")
+
+	
 func _area_entered():
 	pass
 
 func launch_entities():
-	pass
+	for ray in [rayL,rayR,rayU]:
+		if !ray.is_colliding():
+			continue
+		var obj = ray.get_collider()
+		if !(obj is CollisionObject2D):
+			continue
+		ray.get_collider().velocity += (ray.get_collision_point()-ray.global_position).normalized()*200
+
+
+func _on_animated_sprite_2d_animation_finished():
+	spr.play("idle")

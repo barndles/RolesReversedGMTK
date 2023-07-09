@@ -41,6 +41,7 @@ func launch_entities():
 		spr.play("flippity")
 		durability -= 1
 		Global.score += 100
+	
 		if durability == 0:
 			queue_free()
 		flip_timeout.start()

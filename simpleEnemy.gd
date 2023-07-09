@@ -6,11 +6,18 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction: int = 1
 
 var speed: float = 70
-
+@onready var spr = $Icon
 func _physics_process(delta):
 	# Add the gravity.
 	
 	handle_collisions()
+	
+	spr.play("walk")
+	
+	if velocity.x > 0:
+		spr.flip_h = false
+	else:
+		spr.flip_h = true
 	
 	if is_on_wall():
 		direction = -direction

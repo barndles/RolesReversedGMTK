@@ -1271,6 +1271,8 @@ texture = ExtResource("2_vrste")
 13:6/0/terrains_peering_bit/top_left_corner = 0
 
 [sub_resource type="TileSet" id="TileSet_m4ied"]
+occlusion_layer_0/light_mask = 1
+occlusion_layer_0/sdf_collision = true
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 1
 terrain_set_0/terrain_0/name = "BrickGrey"
@@ -1281,3 +1283,5 @@ sources/2 = SubResource("TileSetAtlasSource_a2a0k")
 [node name="TileMap" type="TileMap"]
 tile_set = SubResource("TileSet_m4ied")
 format = 2
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]

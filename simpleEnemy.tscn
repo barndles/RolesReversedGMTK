@@ -1,10 +1,51 @@
-[gd_scene load_steps=4 format=3 uid="uid://cl32r5awnb1o3"]
+[gd_scene load_steps=9 format=3 uid="uid://cl32r5awnb1o3"]
 
 [ext_resource type="Script" path="res://simpleEnemy.gd" id="1_hswdq"]
-[ext_resource type="Texture2D" uid="uid://dri7wcdpk7tuk" path="res://icon.svg" id="2_rg171"]
+[ext_resource type="Texture2D" uid="uid://cpayt8noxcyrd" path="res://Assets/Bort-tholomeu.png" id="2_rht64"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0y0b"]
-size = Vector2(12, 12)
+size = Vector2(14, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y8ht"]
+atlas = ExtResource("2_rht64")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufk0i"]
+atlas = ExtResource("2_rht64")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hoiv"]
+atlas = ExtResource("2_rht64")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8c74"]
+atlas = ExtResource("2_rht64")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_daf5c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0y8ht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufk0i")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hoiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8c74")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [node name="Simple Enemy" type="CharacterBody2D"]
 collision_layer = 16
@@ -12,9 +53,10 @@ collision_mask = 11
 script = ExtResource("1_hswdq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_n0y0b")
 
-[node name="Icon" type="Sprite2D" parent="."]
-self_modulate = Color(1, 0.0352941, 0, 1)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_rg171")
+[node name="Icon" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_daf5c")
+animation = &"walk"
+frame_progress = 0.0734008

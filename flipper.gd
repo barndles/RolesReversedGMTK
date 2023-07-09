@@ -8,7 +8,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-
+@onready var spr = $Flipper
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -32,4 +32,5 @@ func launch_entities():
 		if body == self:
 			continue
 		body.velocity = Vector2(-100 * transform.get_scale().y,-500)
+		spr.play("flippity")
 		#print(transform.get_scale().y)

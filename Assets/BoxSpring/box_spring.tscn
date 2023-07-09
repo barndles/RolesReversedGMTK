@@ -1,10 +1,46 @@
-[gd_scene load_steps=10 format=3 uid="uid://bf07scyyveadt"]
+[gd_scene load_steps=18 format=3 uid="uid://bf07scyyveadt"]
 
 [ext_resource type="Texture2D" uid="uid://bcual1o4l0g76" path="res://Assets/BoxSpring/Box_Spring_Sprites-Sheet.png" id="1_e4es3"]
 [ext_resource type="Script" path="res://Assets/BoxSpring/box_spring.gd" id="1_q2na0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hmtyi"]
 size = Vector2(14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yepk"]
+atlas = ExtResource("1_e4es3")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4va8n"]
+atlas = ExtResource("1_e4es3")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rc3ly"]
+atlas = ExtResource("1_e4es3")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8xen"]
+atlas = ExtResource("1_e4es3")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iewxv"]
+atlas = ExtResource("1_e4es3")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgi3r"]
+atlas = ExtResource("1_e4es3")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7ngc"]
+atlas = ExtResource("1_e4es3")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4eld1"]
+atlas = ExtResource("1_e4es3")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ji3hw"]
+atlas = ExtResource("1_e4es3")
+region = Rect2(64, 64, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fx4uj"]
 atlas = ExtResource("1_e4es3")
@@ -26,6 +62,48 @@ region = Rect2(0, 160, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_1yepk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4va8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rc3ly")
+}],
+"loop": true,
+"name": &"Launch_L",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8xen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iewxv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgi3r")
+}],
+"loop": true,
+"name": &"Launch_R",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7ngc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4eld1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ji3hw")
+}],
+"loop": true,
+"name": &"Launch_U",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_fx4uj")
 }, {
 "duration": 1.0,
@@ -42,10 +120,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w4tnl"]
-size = Vector2(9.5, 4.5)
-
 [node name="BoxSpring" type="CharacterBody2D"]
+position = Vector2(0, -16)
 script = ExtResource("1_q2na0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -54,21 +130,23 @@ shape = SubResource("RectangleShape2D_hmtyi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hg21c")
-animation = &"idle"
-frame_progress = 0.01593
+animation = &"Launch_L"
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Triggers" type="Node2D" parent="."]
 
-[node name="CollisionR" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(9, 8)
+[node name="CollisionR" type="RayCast2D" parent="Triggers"]
+position = Vector2(6, 8)
 rotation = 1.5708
-shape = SubResource("RectangleShape2D_w4tnl")
+target_position = Vector2(-2.19345e-05, -6)
+collision_mask = 15
 
-[node name="CollisionU" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -0.75)
-shape = SubResource("RectangleShape2D_w4tnl")
+[node name="CollisionU" type="RayCast2D" parent="Triggers"]
+position = Vector2(0, 2.25)
+target_position = Vector2(0, -6.25)
+collision_mask = 15
 
-[node name="CollisionL" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-9, 8)
+[node name="CollisionL" type="RayCast2D" parent="Triggers"]
+position = Vector2(-6, 8)
 rotation = -1.5708
-shape = SubResource("RectangleShape2D_w4tnl")
+target_position = Vector2(2.19345e-05, -6)
+collision_mask = 15

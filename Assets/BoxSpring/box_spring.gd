@@ -15,9 +15,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var area_2d = $Area2D
 @onready var spr = $AnimatedSprite2D
 
-@onready var colR = $Area2D/CollisionR
-@onready var colL = $Area2D/CollisionL
-@onready var colU = $Area2D/CollisionU
+@onready var rayR = $Triggers/CollisionR
+@onready var rayL = $Triggers/CollisionL
+@onready var rayU = $Triggers/CollisionU
 
 func _ready():
 	spr.play("idle")
@@ -30,14 +30,20 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	launch_entities()
+	
+	if rayL.is_colliding():
+		spr.play("Launch_L")
+		print("rayL")
+	if rayR.is_colliding():
+		spr.play("Launch_R")
+		print("ray_R")
+	if rayU.is_colliding():
+		spr.play("Launch_U")
+		print("ray_U")
+	else:
+		spr.play("idle")
+func _area_entered():
+	pass
 
 func launch_entities():
-	if not (is_on_floor() or velocity.y < 0): # dont do anything if either in air or moving up
-		return
-	for body in area_2d.get_overlapping_bodies():
-		if not (body is CollisionObject2D):
-			continue
-		if body == self:
-			continue
-		body.velocity = Vector2(-100 * transform.get_scale().y,-500)
-		#print(transform.get_scale().y)
+	pass

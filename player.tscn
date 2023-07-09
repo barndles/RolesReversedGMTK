@@ -1,10 +1,65 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2cirmtj1ipjd"]
+[gd_scene load_steps=11 format=3 uid="uid://c2cirmtj1ipjd"]
 
-[ext_resource type="Texture2D" uid="uid://dri7wcdpk7tuk" path="res://icon.svg" id="1_6jqv7"]
 [ext_resource type="Script" path="res://player.gd" id="1_ub40n"]
+[ext_resource type="Texture2D" uid="uid://yklld7tc7m70" path="res://Assets/Player/Poor_Joebot.png" id="2_g731s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l8hvd"]
-size = Vector2(130, 130)
+size = Vector2(70, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcak5"]
+atlas = ExtResource("2_g731s")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hl5me"]
+atlas = ExtResource("2_g731s")
+region = Rect2(16, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4ljw"]
+atlas = ExtResource("2_g731s")
+region = Rect2(0, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xocp"]
+atlas = ExtResource("2_g731s")
+region = Rect2(16, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wiwo2"]
+atlas = ExtResource("2_g731s")
+region = Rect2(32, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xoqbk"]
+atlas = ExtResource("2_g731s")
+region = Rect2(48, 64, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ernli"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcak5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hl5me")
+}],
+"loop": true,
+"name": &"hit_air",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4ljw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xocp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wiwo2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xoqbk")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 7.0
+}]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_layer = 8
@@ -12,19 +67,21 @@ collision_mask = 19
 script = ExtResource("1_ub40n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
 scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_l8hvd")
 
-[node name="Icon" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_6jqv7")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ernli")
+animation = &"hit_air"
+frame_progress = 0.62229
 
 [node name="RAY_R" type="RayCast2D" parent="."]
-position = Vector2(11, 13)
+position = Vector2(6, 14)
 target_position = Vector2(0, 7)
 collision_mask = 3
 
 [node name="RAY_L" type="RayCast2D" parent="."]
-position = Vector2(-11, 13)
+position = Vector2(-6, 14)
 target_position = Vector2(0, 7)
 collision_mask = 3

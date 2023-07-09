@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://by7ydp3ic6f4q"]
+[gd_scene load_steps=5 format=3 uid="uid://by7ydp3ic6f4q"]
 
-[ext_resource type="Script" path="res://Mouse_State_Controller.gd" id="1_6ujru"]
 [ext_resource type="Texture2D" uid="uid://h6tgmq7n2byb" path="res://Assets/flipper.png" id="1_y7cvu"]
 [ext_resource type="Texture2D" uid="uid://dri7wcdpk7tuk" path="res://icon.svg" id="2_smig4"]
 [ext_resource type="Script" path="res://ItemList.gd" id="3_k2y0y"]
@@ -14,7 +13,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_6ujru")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
@@ -54,6 +52,3 @@ item_2/icon = ExtResource("2_smig4")
 item_3/text = ""
 item_3/icon = ExtResource("1_y7cvu")
 script = ExtResource("3_k2y0y")
-
-[connection signal="mouse_entered" from="Panel" to="Panel/ItemList" method="_on_panel_mouse_entered"]
-[connection signal="mouse_exited" from="Panel" to="Panel/ItemList" method="_on_panel_mouse_exited"]

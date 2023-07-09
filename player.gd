@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @onready var rayR = $RAY_R
 @onready var rayL = $RAY_L
+@onready var spr = get_node("AnimatedSprite2D")
+
 var groundRay
 const SPEED = 100.0
 var direction = 1
@@ -13,6 +15,13 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	velocity.x = 200
+	
+
+func _process(delta):
+	if velocity.x != 0:
+		spr.play("walk")
+
+
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -41,6 +50,12 @@ func _physics_process(delta):
 	
 	if is_on_floor() and not groundRay:
 		velocity.y += JUMP_VELOCITY
+	
+	# sprite flippong
+	if velocity.x > 0:
+		spr.flip_h = true
+	else:
+		spr.flip_h = false
 
 
 	# Get the input direction and handle the movement/deceleration.
@@ -49,7 +64,5 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-func bounce(dir:Vector2):
-	
-	velocity = dir
+
 	

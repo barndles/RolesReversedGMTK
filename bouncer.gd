@@ -1,7 +1,22 @@
 extends Area2D
 
-func _process(delta):
-	$Icon.rotation += .9
+@onready var spr = $AnimatedSprite2D
 
-func _on_area_2d_body_entered(body):
-	body.velocity = (body.global_position-global_position).normalized() * 270
+func _ready():
+	spr.play("spin")
+
+#func _process(delta):
+	#$Icon.rotation += .9
+
+#func _on_Area2D_body_entered(body):
+
+
+func _on_body_entered(body):
+	bounce((body.global_position-global_position).normalized() * 270, body)
+
+func bounce(dir:Vector2, target):
+	var timer = 10
+	if timer > 0:
+		for n in range(timer):
+			target.velocity = dir
+			timer -= 1

@@ -89,7 +89,7 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.1,
 "texture": SubResource("AtlasTexture_v7ngc")
 }, {
 "duration": 1.0,
@@ -97,6 +97,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ji3hw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7ngc")
 }],
 "loop": true,
 "name": &"Launch_U",
@@ -130,7 +133,8 @@ shape = SubResource("RectangleShape2D_hmtyi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hg21c")
-animation = &"Launch_L"
+animation = &"Launch_U"
+frame_progress = 0.129734
 
 [node name="Triggers" type="Node2D" parent="."]
 

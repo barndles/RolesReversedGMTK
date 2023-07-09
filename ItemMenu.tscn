@@ -1,5 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://by7ydp3ic6f4q"]
 
+[ext_resource type="Script" path="res://Button_Reset.gd" id="1_tp1b1"]
 [ext_resource type="Texture2D" uid="uid://bktm5a1mwg83t" path="res://Assets/flipper/flipper_icon.png" id="2_gihjo"]
 [ext_resource type="Script" path="res://ItemList.gd" id="3_k2y0y"]
 [ext_resource type="Texture2D" uid="uid://bsre3o4oi4c0q" path="res://Assets/Bort-tholomeu_Icon.png" id="3_oikbf"]
@@ -19,18 +20,27 @@ grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_top = 359.0
+offset_top = 315.0
 offset_right = 512.0
-offset_bottom = 511.0
+offset_bottom = 512.0
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="RESTART" type="Button" parent="Panel"]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 7.0
 offset_right = 87.0
 offset_bottom = 39.0
 toggle_mode = true
-button_pressed = true
+text = "RESTART"
+script = ExtResource("1_tp1b1")
+
+[node name="PAUSE" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 7.0
+offset_right = 172.0
+offset_bottom = 39.0
+toggle_mode = true
 text = "PAUSED"
 script = ExtResource("4_731k0")
 
@@ -39,7 +49,7 @@ layout_mode = 2
 offset_left = 7.0
 offset_top = 44.0
 offset_right = 504.0
-offset_bottom = 138.0
+offset_bottom = 196.0
 allow_reselect = true
 item_count = 4
 max_columns = 0

@@ -10,5 +10,5 @@ func _process(delta):
 		self.text = "PLAY"
 	else:
 		get_tree().paused = false
-		self.text = "RESTART"
+		self.text = "PAUSED"
 	pass

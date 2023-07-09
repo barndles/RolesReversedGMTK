@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://by7ydp3ic6f4q"]
+[gd_scene load_steps=8 format=3 uid="uid://by7ydp3ic6f4q"]
 
 [ext_resource type="Texture2D" uid="uid://bktm5a1mwg83t" path="res://Assets/flipper/flipper_icon.png" id="2_gihjo"]
 [ext_resource type="Script" path="res://ItemList.gd" id="3_k2y0y"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dyyc63vs22jxc" path="res://Assets/Gears/Gear_Icon.png" id="4_4q37n"]
 [ext_resource type="Script" path="res://Button.gd" id="4_731k0"]
 [ext_resource type="Texture2D" uid="uid://ilwiw682pcgc" path="res://Assets/BoxSpring/BoxSpring_Icon.png" id="5_l2vnw"]
+[ext_resource type="Script" path="res://Score.gd" id="7_l2dsc"]
 
 [node name="Control" type="Control"]
 process_mode = 3
@@ -55,3 +56,11 @@ item_2/icon = ExtResource("4_4q37n")
 item_3/text = ""
 item_3/icon = ExtResource("5_l2vnw")
 script = ExtResource("3_k2y0y")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 362.0
+offset_top = 10.0
+offset_right = 402.0
+offset_bottom = 33.0
+script = ExtResource("7_l2dsc")

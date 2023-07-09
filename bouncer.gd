@@ -22,8 +22,9 @@ func bounce(dir:Vector2, target):
 	if bounce_timeout.time_left > 0:
 		return
 	
-	target.velocity = dir
+	target.velocity = Vector2(dir.x,dir.y*.5-200)
 	durability -= 1
+	Global.score += 100
 	if durability == 0:
 		queue_free()
 	bounce_timeout.start()

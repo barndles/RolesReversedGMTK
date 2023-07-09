@@ -4,6 +4,7 @@ extends Button
 func _process(delta):
 	if button_pressed:
 		if self.text == "RESTART":
+			Global.score = 0
 			get_tree().reload_current_scene()
 		get_tree().paused = true
 		self.text = "PLAY"

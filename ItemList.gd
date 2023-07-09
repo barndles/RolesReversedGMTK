@@ -39,6 +39,6 @@ func spawn(selection:int):
 	if canSpawn:
 		var spawnedObject = spawnables[selection].instantiate()
 		spawnedObject.global_position = get_global_mouse_position()
-		get_parent().get_parent().add_child(spawnedObject)
+		get_tree().root.add_child(spawnedObject)
 
 

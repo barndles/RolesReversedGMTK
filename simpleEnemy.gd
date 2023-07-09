@@ -21,6 +21,8 @@ func _physics_process(delta):
 	
 	if is_on_wall():
 		direction = -direction
+	else:
+		direction = sign(velocity.x)
 	
 	if is_on_floor():
 		velocity.x = direction * speed

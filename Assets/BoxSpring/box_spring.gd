@@ -54,7 +54,7 @@ func launch_entities():
 		var obj = ray.get_collider()
 		if !(obj is CollisionObject2D):
 			continue
-		ray.get_collider().velocity += (ray.get_collision_point()-ray.global_position).normalized()*200
+		ray.get_collider().velocity += ((ray.get_collision_point()-ray.global_position).normalized() + Vector2(0, 0.2)) * 600
 #		if obj.get_collision_layer_value(4):
 #			Global.score += 100
 #		durability -= 1

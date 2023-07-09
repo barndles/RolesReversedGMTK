@@ -13,8 +13,8 @@ func _process(delta):
 
 func show_win_screen():
 	button.visible = true
-	button.text = "look in Control script, make new ui visible and display Global.score"
-	print("Hi barndles! 'next_level' is an export variable which means it can be changed per instace of it in a scene. You can see it in the properties when you add it, and click load to set it to another scene.")
+	button.text = "YOU SPENT: $" + str(Global.score)
+	# print("Hi barndles! 'next_level' is an export variable which means it can be changed per instace of it in a scene. You can see it in the properties when you add it, and click load to set it to another scene.")
 
 
 func _on_button_button_down():

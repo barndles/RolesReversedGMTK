@@ -11,7 +11,7 @@ var mouseOnUI = get_node(".").mouseOnUI
 var canSpawn = false
 var mousePos
 
-var flip = 1
+var flip = -1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

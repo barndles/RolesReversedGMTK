@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cpayt8noxcyrd" path="res://Assets/Bort-tholomeu.png" id="2_rht64"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0y0b"]
-size = Vector2(14, 15)
+size = Vector2(12, 13)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0y8ht"]
 atlas = ExtResource("2_rht64")
@@ -53,7 +53,7 @@ collision_mask = 31
 script = ExtResource("1_hswdq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.5)
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_n0y0b")
 
 [node name="Icon" type="AnimatedSprite2D" parent="."]

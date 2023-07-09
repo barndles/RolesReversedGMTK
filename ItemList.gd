@@ -20,7 +20,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(mouseOnUI)
 	mousePos = get_global_mouse_position()
 	
 	if mousePos.y > 312:

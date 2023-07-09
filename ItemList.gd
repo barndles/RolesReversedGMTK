@@ -11,6 +11,8 @@ var mouseOnUI = get_node(".").mouseOnUI
 var canSpawn = false
 var mousePos
 
+var flip = 1
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
@@ -25,6 +27,9 @@ func _process(delta):
 		canSpawn = false
 	else:
 		canSpawn = true
+	
+	if Input.is_action_just_pressed("Flip"):
+		flip = -flip
 
 
 func _input(event):
@@ -42,6 +47,7 @@ func spawn(selection:int):
 		Global.score -= cost[selection]
 		var spawnedObject = spawnables[selection].instantiate()
 		spawnedObject.global_position = get_global_mouse_position()
+		spawnedObject.scale.x *= flip
 		get_tree().root.get_child(1).add_child(spawnedObject)
 
 

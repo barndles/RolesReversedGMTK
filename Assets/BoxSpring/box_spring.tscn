@@ -61,7 +61,7 @@ region = Rect2(0, 160, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_hg21c"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.1,
 "texture": SubResource("AtlasTexture_1yepk")
 }, {
 "duration": 1.0,
@@ -69,13 +69,16 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rc3ly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yepk")
 }],
 "loop": false,
 "name": &"Launch_L",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.1,
 "texture": SubResource("AtlasTexture_g8xen")
 }, {
 "duration": 1.0,
@@ -83,13 +86,16 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lgi3r")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_g8xen")
 }],
 "loop": false,
 "name": &"Launch_R",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.1,
 "texture": SubResource("AtlasTexture_v7ngc")
 }, {
 "duration": 1.0,
@@ -97,6 +103,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ji3hw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7ngc")
 }],
 "loop": false,
 "name": &"Launch_U",
@@ -131,7 +140,7 @@ shape = SubResource("RectangleShape2D_hmtyi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_hg21c")
-animation = &"idle"
+animation = &"Launch_L"
 
 [node name="Triggers" type="Node2D" parent="."]
 

@@ -27,6 +27,7 @@ offset_top = 7.0
 offset_right = 87.0
 offset_bottom = 39.0
 toggle_mode = true
+button_pressed = true
 text = "PAUSED"
 script = ExtResource("4_731k0")
 

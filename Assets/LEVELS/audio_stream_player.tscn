@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcfdym5dclv3k"]
+
+[ext_resource type="AudioStream" uid="uid://b46t8tk4jlv8c" path="res://Assets/Music/barnelsdefjaifudfsjhk(1).mp3" id="1_55dqq"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_55dqq")
+autoplay = true

@@ -20,4 +20,4 @@ func show_win_screen():
 func _on_button_button_down():
 	Global.score = 0
 	Global.level_over = false
-	#get_tree().change_scene_to_packed(next_level)
+	get_tree().change_scene_to_packed(next_level)
